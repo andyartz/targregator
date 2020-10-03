@@ -1,0 +1,82 @@
+<ruleset xmlns="http://codenarc.org/ruleset/1.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://codenarc.org/ruleset/1.0 http://codenarc.org/ruleset-schema.xsd"
+         xsi:noNamespaceSchemaLocation="http://codenarc.org/ruleset-schema.xsd">
+
+    <description>Codenarc rule set</description>
+
+    <ruleset-ref path='rulesets/basic.xml'/>
+    <ruleset-ref path='rulesets/braces.xml'/>
+    <ruleset-ref path='rulesets/concurrency.xml'/>
+    <ruleset-ref path='rulesets/convention.xml'>
+        <exclude name="CompileStatic"/>
+        <exclude name="ImplicitClosureParameter"/>
+        <exclude name="PublicMethodsBeforeNonPublicMethods"/>
+        <exclude name="StaticMethodsBeforeInstanceMethods"/>
+        <exclude name="TrailingComma"/>
+    </ruleset-ref>
+    <ruleset-ref path='rulesets/design.xml'/>
+    <ruleset-ref path='rulesets/dry.xml'>
+<!--        <rule-config name="DuplicateListLiteral">-->
+<!--            <property name="doNotApplyToFilenames" value="*Test.groovy, *Spec.groovy, *Config.groovy, *Configuration.groovy"/>-->
+<!--        </rule-config>-->
+<!--        <rule-config name="DuplicateMapLiteral">-->
+<!--            <property name="doNotApplyToFilenames" value="*Test.groovy, *Spec.groovy, *Config.groovy, *Configuration.groovy"/>-->
+<!--        </rule-config>-->
+<!--        <rule-config name="DuplicateNumberLiteral">-->
+<!--            <property name="doNotApplyToFilenames" value="*Test.groovy, *Spec.groovy, *Config.groovy, *Configuration.groovy"/>-->
+<!--        </rule-config>-->
+<!--        <rule-config name="DuplicateStringLiteral">-->
+<!--            <property name="doNotApplyToFilenames" value="*Test.groovy, *Spec.groovy, *Config.groovy, *Configuration.groovy"/>-->
+<!--        </rule-config>-->
+    </ruleset-ref>
+    <ruleset-ref path='rulesets/exceptions.xml'/>
+    <ruleset-ref path='rulesets/formatting.xml'>
+        <rule-config name="LineLength">
+            <property name="length" value="250"/>
+<!--            <property name="doNotApplyToFilenames" value="*Test.groovy, *Spec.groovy"/>-->
+        </rule-config>
+        <rule-config name="ClassEndsWithBlankLine">
+            <property name="blankLineRequired" value="false"/>
+        </rule-config>
+        <rule-config name="SpaceAfterOpeningBrace">
+            <property name="ignoreEmptyBlock" value="true"/>
+        </rule-config>
+        <rule-config name="SpaceBeforeClosingBrace">
+            <property name="ignoreEmptyBlock" value="true"/>
+        </rule-config>
+    </ruleset-ref>
+    <ruleset-ref path='rulesets/generic.xml'/>
+    <ruleset-ref path='rulesets/groovyism.xml'/>
+    <ruleset-ref path='rulesets/imports.xml'/>
+    <ruleset-ref path='rulesets/jdbc.xml'/>
+    <ruleset-ref path='rulesets/junit.xml'>
+        <exclude name="JUnitPublicNonTestMethod"/>
+        <exclude name="JUnitPublicProperty"/>
+    </ruleset-ref>
+    <ruleset-ref path='rulesets/logging.xml'/>
+    <ruleset-ref path='rulesets/naming.xml'>
+<!--        <rule-config name="MethodName">-->
+<!--            <property name="doNotApplyToFilenames" value="*Test.groovy, *Spec.groovy"/>-->
+<!--        </rule-config>-->
+        <exclude name="FactoryMethodName"/>
+    </ruleset-ref>
+    <ruleset-ref path='rulesets/size.xml'>
+<!--        <rule-config name="ClassSize">-->
+<!--            <property name="maxLines" value="200"/>-->
+<!--            <property name="doNotApplyToFilenames" value="*Test.groovy, *Spec.groovy"/>-->
+<!--        </rule-config>-->
+<!--        <rule-config name="MethodSize">-->
+<!--            <property name="maxLines" value="20"/>-->
+<!--            <property name="doNotApplyToFilenames" value="*Test.groovy, *Spec.groovy, *Converter.groovy, *Factory.groovy, *Builder.groovy"/>-->
+<!--        </rule-config>-->
+        <exclude name="CrapMetric"/>
+    </ruleset-ref>
+    <ruleset-ref path='rulesets/security.xml'/>
+    <ruleset-ref path='rulesets/serialization.xml'/>
+    <ruleset-ref path='rulesets/unnecessary.xml'>
+        <exclude name="UnnecessaryGString"/>
+        <exclude name="UnnecessaryObjectReferences"/>
+    </ruleset-ref>
+    <ruleset-ref path='rulesets/unused.xml'/>
+</ruleset>
