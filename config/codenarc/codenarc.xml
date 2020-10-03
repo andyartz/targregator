@@ -17,24 +17,24 @@
     </ruleset-ref>
     <ruleset-ref path='rulesets/design.xml'/>
     <ruleset-ref path='rulesets/dry.xml'>
-<!--        <rule-config name="DuplicateListLiteral">-->
-<!--            <property name="doNotApplyToFilenames" value="*Test.groovy, *Spec.groovy, *Config.groovy, *Configuration.groovy"/>-->
-<!--        </rule-config>-->
-<!--        <rule-config name="DuplicateMapLiteral">-->
-<!--            <property name="doNotApplyToFilenames" value="*Test.groovy, *Spec.groovy, *Config.groovy, *Configuration.groovy"/>-->
-<!--        </rule-config>-->
-<!--        <rule-config name="DuplicateNumberLiteral">-->
-<!--            <property name="doNotApplyToFilenames" value="*Test.groovy, *Spec.groovy, *Config.groovy, *Configuration.groovy"/>-->
-<!--        </rule-config>-->
-<!--        <rule-config name="DuplicateStringLiteral">-->
-<!--            <property name="doNotApplyToFilenames" value="*Test.groovy, *Spec.groovy, *Config.groovy, *Configuration.groovy"/>-->
-<!--        </rule-config>-->
+        <rule-config name="DuplicateListLiteral">
+            <property name="doNotApplyToClassNames" value="*Test.groovy, *Spec.groovy, *Config.groovy, *Configuration.groovy"/>
+        </rule-config>
+        <rule-config name="DuplicateMapLiteral">
+            <property name="doNotApplyToClassNames" value="*Test.groovy, *Spec.groovy, *Config.groovy, *Configuration.groovy"/>
+        </rule-config>
+        <rule-config name="DuplicateNumberLiteral">
+            <property name="doNotApplyToClassNames" value="*Test.groovy, *Spec.groovy, *Config.groovy, *Configuration.groovy"/>
+        </rule-config>
+        <rule-config name="DuplicateStringLiteral">
+            <property name="doNotApplyToClassNames" value="*Test.groovy, *Spec.groovy, *Config.groovy, *Configuration.groovy"/>
+        </rule-config>
     </ruleset-ref>
     <ruleset-ref path='rulesets/exceptions.xml'/>
     <ruleset-ref path='rulesets/formatting.xml'>
         <rule-config name="LineLength">
             <property name="length" value="250"/>
-<!--            <property name="doNotApplyToFilenames" value="*Test.groovy, *Spec.groovy"/>-->
+            <property name="doNotApplyToClassNames" value="*Test, *Spec"/>
         </rule-config>
         <rule-config name="ClassEndsWithBlankLine">
             <property name="blankLineRequired" value="false"/>
@@ -56,20 +56,20 @@
     </ruleset-ref>
     <ruleset-ref path='rulesets/logging.xml'/>
     <ruleset-ref path='rulesets/naming.xml'>
-<!--        <rule-config name="MethodName">-->
-<!--            <property name="doNotApplyToFilenames" value="*Test.groovy, *Spec.groovy"/>-->
-<!--        </rule-config>-->
+        <rule-config name="MethodName">
+            <property name="doNotApplyToClassNames" value="*Test, *Spec"/>
+        </rule-config>
         <exclude name="FactoryMethodName"/>
     </ruleset-ref>
     <ruleset-ref path='rulesets/size.xml'>
-<!--        <rule-config name="ClassSize">-->
-<!--            <property name="maxLines" value="200"/>-->
-<!--            <property name="doNotApplyToFilenames" value="*Test.groovy, *Spec.groovy"/>-->
-<!--        </rule-config>-->
-<!--        <rule-config name="MethodSize">-->
-<!--            <property name="maxLines" value="20"/>-->
-<!--            <property name="doNotApplyToFilenames" value="*Test.groovy, *Spec.groovy, *Converter.groovy, *Factory.groovy, *Builder.groovy"/>-->
-<!--        </rule-config>-->
+        <rule-config name="ClassSize">
+            <property name="maxLines" value="200"/>
+            <property name="doNotApplyToClassNames" value="*Test, *Spec"/>
+        </rule-config>
+        <rule-config name="MethodSize">
+            <property name="maxLines" value="20"/>
+            <property name="doNotApplyToClassNames" value="*Test, *Spec"/>
+        </rule-config>
         <exclude name="CrapMetric"/>
     </ruleset-ref>
     <ruleset-ref path='rulesets/security.xml'/>
