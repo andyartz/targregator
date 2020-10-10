@@ -1,0 +1,34 @@
+spring:
+  jackson:
+      property-naming-strategy: SNAKE_CASE
+server:
+  error:
+    include-message: always
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: 'info, health, metrics, caches, circuitbreakers, circuitbreakerevents'
+  health:
+    circuitbreakers:
+      enabled: true
+
+# actuator needs this to see resilience4j circuitbreakers -- this may not be necessary in the future
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        registerHealthIndicator: true
+    instances:
+      redsky-product:
+        baseConfig: default
+
+targregator:
+  service:
+    redsky:
+      url: 'https://redsky.target.com/v3/pdp/tcin/{id}?key=candidate&excludes=taxonomy,price,promotion,bulk_ship,rating_and_review_reviews,rating_and_review_statistics,question_answer_statistics,available_to_promise_network'
+      cache:
+        expirationInSeconds: 30
