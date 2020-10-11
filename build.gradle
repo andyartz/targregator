@@ -13,6 +13,10 @@ repositories {
 	mavenCentral()
 }
 
+sourceSets {
+	contractTest
+}
+
 dependencies {
 	codenarc("org.codenarc:CodeNarc:${codenarc.toolVersion}")
 	codenarc('org.codehaus.groovy:groovy-templates')
@@ -38,8 +42,21 @@ dependencies {
 	testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
 	testImplementation 'org.springframework.security:spring-security-test'
 	testImplementation 'org.spockframework:spock-spring:1.3-groovy-2.5'
+
+	contractTestImplementation sourceSets.main.output
+	contractTestImplementation configurations.testImplementation
+	contractTestRuntimeOnly configurations.testRuntimeOnly
 }
 
 test {
 	useJUnitPlatform()
 }
+
+task contractTest(type: Test) {
+	group = 'verification'
+	ext.testSrcDirs = project.sourceSets.contractTest.groovy.srcDirs
+	testClassesDirs = sourceSets.contractTest.output.classesDirs
+	classpath = sourceSets.contractTest.runtimeClasspath
+}
+
+check.dependsOn contractTest

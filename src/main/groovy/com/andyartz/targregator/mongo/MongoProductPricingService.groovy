@@ -15,7 +15,7 @@ class MongoProductPricingService implements ProductPricingService {
     @Override
     Pricing getProductPricing(Integer integer) {
         productRepository.findById(BigInteger.valueOf(integer)).map {
-            new Pricing(currency: Currency.getInstance('USD'), amount: it.currentPriceInUSDollars)
+            new Pricing(currency:Currency.getInstance('USD'), amount:it.currentPriceInUSDollars)
         }.orElseThrow {
             new ProductPricingNotFoundException(null)
         }

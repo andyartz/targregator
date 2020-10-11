@@ -27,12 +27,14 @@ class ProductController {
 }
 
 class ProductDto {
+
     Integer id
     String name
     Pricing currentPricing
 }
 
 class PricingDto {
+
     BigDecimal amount
     Currency currency
 }

@@ -45,6 +45,7 @@
         <rule-config name="SpaceBeforeClosingBrace">
             <property name="ignoreEmptyBlock" value="true"/>
         </rule-config>
+        <exclude name="ClosureStatementOnOpeningLineOfMultipleLineClosure"/><!-- this rule is misfiring for unknown reason not worth tracking down -->
     </ruleset-ref>
     <ruleset-ref path='rulesets/generic.xml'/>
     <ruleset-ref path='rulesets/groovyism.xml'/>

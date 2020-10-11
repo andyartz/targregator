@@ -16,12 +16,9 @@ class AggregatedProductService implements ProductService {
 
     @Override
     Product getProduct(Integer id) {
-
         String name = productNameService.getProductName(id)
         Pricing pricing = productPricingService.getProductPricing(id)
 
         new Product(id:id, name:name, currentPricing:pricing)
     }
 }
-
-

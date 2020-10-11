@@ -16,7 +16,7 @@ class RedskyProductNameService implements ProductNameService {
 
     @Cacheable('product-names')
     @Override
-    String getProductName(Integer id) {
+    String getProductName(Integer id) throws ProductNameNotFoundException {
         try {
             redskyClient.getProduct(id).product.item.productDescription.title
         } catch (HttpClientErrorException e) {

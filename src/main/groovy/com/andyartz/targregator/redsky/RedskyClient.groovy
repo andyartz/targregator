@@ -30,23 +30,27 @@ class RedskyClient {
 @EqualsAndHashCode
 @ToString(includePackage = false, includeNames = true)
 class ResponseDto {
+
     ProductDto product
 }
 
 @EqualsAndHashCode
 @ToString(includePackage = false, includeNames = true)
 class ProductDto {
+
     ItemDto item
 }
 
 @EqualsAndHashCode
 @ToString(includePackage = false, includeNames = true)
 class ItemDto {
+
     ProductDescriptionDto productDescription
 }
 
 @EqualsAndHashCode
 @ToString(includePackage = false, includeNames = true)
 class ProductDescriptionDto {
+
     String title
 }
