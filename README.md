@@ -20,11 +20,11 @@ This service aggregates product information from multiple sources: naming from a
 
 Try these endpoints:
 
-http://localhost:8080/actuator/health (should include circuitbreaker and mongo dependencies)
-http://localhost:8080/products/13860428 (should result in 200 with JSON response. Try twice -- second time should be faster due to caching -- expiration is 30s for demo purposes)
-http://localhost:8080/products/13860429 (should result in 404 due to missing pricing. Try twice -- second time should be faster)
-http://localhost:8080/products/13860430 (should result in 404 due to missing name, as of 11 October 2020)
-http://localhost:8080/actuator/circuitbreakerevents (should show resilience4j events of interest)
+* http://localhost:8080/actuator/health (should include circuitbreaker and mongo dependencies)
+* http://localhost:8080/products/13860428 (should result in 200 with JSON response. Try twice -- second time should be faster due to caching -- expiration is 30s for demo purposes)
+* http://localhost:8080/products/13860429 (should result in 404 due to missing pricing. Try twice -- second time should be faster)
+* http://localhost:8080/products/13860430 (should result in 404 due to missing name, as of 11 October 2020)
+* http://localhost:8080/actuator/circuitbreakerevents (should show resilience4j events of interest)
 
 ## Other Stuff
 
