@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  mongo:
+    image: library/mongo:latest
+    container_name: mongo
+    deploy:
+      restart_policy:
+        condition: on-failure
+        max_attempts: 2
+    ports:
+      - "27017-27019:27017-27019"
+    volumes:
+      - /data/db
+    healthcheck:
+      test: "exit 0"
+  targregator:
+    image: library/targregator:0.0.1-SNAPSHOT
+    depends_on:
+      - mongo
+    deploy:
+      restart_policy:
+        condition: on-failure
+        max_attempts: 2
+    ports:
+      - "7777:8080"
+    healthcheck:
+      test: "exit 0"

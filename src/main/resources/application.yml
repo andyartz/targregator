@@ -1,4 +1,7 @@
 spring:
+  data:
+    mongodb:
+      host: localhost # set this to 'mongo' before running bootBuildImage
   jackson:
       property-naming-strategy: SNAKE_CASE
 server:
