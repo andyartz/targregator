@@ -1,7 +1,8 @@
 package com.andyartz.targregator.controller
 
 import com.andyartz.targregator.ProductService
-import com.andyartz.targregator.domain.Pricing
+import groovy.transform.EqualsAndHashCode
+import groovy.transform.ToString
 import org.modelmapper.ModelMapper
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
@@ -26,13 +27,17 @@ class ProductController {
     }
 }
 
+@EqualsAndHashCode
+@ToString(includePackage = false, includeNames = true)
 class ProductDto {
 
     Integer id
     String name
-    Pricing currentPricing
+    PricingDto currentPricing
 }
 
+@EqualsAndHashCode
+@ToString(includePackage = false, includeNames = true)
 class PricingDto {
 
     BigDecimal amount
