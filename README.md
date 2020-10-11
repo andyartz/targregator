@@ -2,6 +2,10 @@
 
 This service aggregates product information from multiple sources: naming from another web service and pricing from a mongo database.
 
+## Requirements
+
+To run locally you'll need Java 11.
+
 ## Getting Started
 
 1. If you have mongodb available at localhost:27017 (running locally or in a container) then run the following gradle task:
