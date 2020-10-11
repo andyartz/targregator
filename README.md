@@ -4,9 +4,9 @@ This service aggregates product information from multiple sources: naming from a
 
 ## Getting Started
 
-1. If you have mongodb available at localhost:27017 (running locally or in a container) then use the _bootRunLocalMongo_ gradle task:
+1. If you have mongodb available at localhost:27017 (running locally or in a container) then run the following gradle task:
 
-    `./gradlew bootRunLocalMongo` 
+    `./gradlew localMongo bootRun` 
 
 2. Otherwise, with docker running locally, you can build a docker image and run it with docker-compose, which will also spin up a containerized mongo instance:
 
