@@ -17,6 +17,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers
 import spock.lang.Specification
 
+@SuppressWarnings('UnnecessaryGetter')
 @WebMvcTest(controllers = ProductController)
 @Import(ProductControllerConfig)
 class ProductControllerIntegrationSpec extends Specification {
@@ -40,7 +41,7 @@ class ProductControllerIntegrationSpec extends Specification {
             .andReturn()
 
         and:
-        new JsonSlurper().parseText(actual.response.getContentAsString()) == new JsonSlurper().parseText('''
+        new JsonSlurper().parseText(actual.response.contentAsString) == new JsonSlurper().parseText('''
             {
                 "id":1976,
                 "name":"Bubblegum",

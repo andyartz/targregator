@@ -13,7 +13,7 @@ class RedskyProductNameServiceSpec extends Specification {
     RedskyClient mockRedskyClient = Mock()
 
     void setup() {
-        systemUnderTest = new RedskyProductNameService(redskyClient: mockRedskyClient)
+        systemUnderTest = new RedskyProductNameService(redskyClient:mockRedskyClient)
     }
 
     void "should get product name"() {
