@@ -4,7 +4,7 @@ This service aggregates product information from multiple sources: naming from a
 
 ## Requirements
 
-To run locally you'll need Java 11 and MongoDB.
+To run locally you'll need Docker or both Java 11 and MongoDB.
 
 ## Getting Started
 
