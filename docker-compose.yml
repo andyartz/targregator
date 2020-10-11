@@ -14,7 +14,7 @@ services:
     healthcheck:
       test: "exit 0"
   targregator:
-    image: library/targregator:0.0.1-SNAPSHOT
+    image: targregator:0.0.1-SNAPSHOT
     depends_on:
       - mongo
     deploy:
@@ -22,6 +22,6 @@ services:
         condition: on-failure
         max_attempts: 2
     ports:
-      - "7777:8080"
+      - "8080:8080"
     healthcheck:
       test: "exit 0"
