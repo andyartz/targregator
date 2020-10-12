@@ -53,10 +53,6 @@ dependencies {
 	integrationTestImplementation 'org.springframework.security:spring-security-test'
 }
 
-test {
-	useJUnitPlatform()
-}
-
 task localMongo() {
 	doLast {
 		bootRun.systemProperty 'spring.profiles.active', 'localMongo'
