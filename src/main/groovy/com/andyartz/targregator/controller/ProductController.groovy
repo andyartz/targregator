@@ -22,7 +22,7 @@ class ProductController {
     @GetMapping(path = '/products/{id}', produces = MediaType.APPLICATION_JSON_VALUE)
     ProductDto getProduct(@PathVariable Integer id) {
         productService.getProduct(id).with {
-            modelMapper.map(it, ProductDto)
+            this.modelMapper.map(it, ProductDto)
         }
     }
 }
